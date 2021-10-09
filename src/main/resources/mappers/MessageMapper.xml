@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.psi.dao.MessageMapper">
-  <resultMap id="BaseResultMap" type="com.psi.bean.Message">
+<mapper namespace="com.ssm.dao.MessageMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Message">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="content" jdbcType="VARCHAR" property="content" />
@@ -77,7 +77,7 @@
     id, title, content, attachmentUrl, sendtime, sendstate, sendEid, receiptEid, messagetype, 
     remark1, remark2, remark3
   </sql>
-  <select id="selectByExample" parameterType="com.psi.bean.MessageExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.ssm.bean.MessageExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -101,13 +101,13 @@
     delete from message
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.psi.bean.MessageExample">
+  <delete id="deleteByExample" parameterType="com.ssm.bean.MessageExample">
     delete from message
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.psi.bean.Message">
+  <insert id="insert" parameterType="com.ssm.bean.Message">
     insert into message (id, title, content, 
       attachmentUrl, sendtime, sendstate, 
       sendEid, receiptEid, messagetype, 
@@ -119,7 +119,7 @@
       #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.psi.bean.Message">
+  <insert id="insertSelective" parameterType="com.ssm.bean.Message">
     insert into message
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -198,7 +198,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.psi.bean.MessageExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.ssm.bean.MessageExample" resultType="java.lang.Long">
     select count(*) from message
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -266,7 +266,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.psi.bean.Message">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.bean.Message">
     update message
     <set>
       <if test="title != null">
@@ -305,7 +305,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.psi.bean.Message">
+  <update id="updateByPrimaryKey" parameterType="com.ssm.bean.Message">
     update message
     set title = #{title,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
-package com.psi.dao;
+package com.ssm.dao;
 
-import com.psi.bean.EmployeeRole;
-import com.psi.bean.EmployeeRoleExample;
+import com.ssm.bean.EmployeeRole;
+import com.ssm.bean.EmployeeRoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

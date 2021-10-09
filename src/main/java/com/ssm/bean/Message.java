@@ -1,4 +1,4 @@
-package com.psi.bean;
+package com.ssm.bean;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
-package com.psi.dao;
+package com.ssm.dao;
 
-import com.psi.bean.Efunction;
-import com.psi.bean.EfunctionExample;
+import com.ssm.bean.Efunction;
+import com.ssm.bean.EfunctionExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

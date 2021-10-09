@@ -1,7 +1,7 @@
-package com.psi.dao;
+package com.ssm.dao;
 
-import com.psi.bean.Erole;
-import com.psi.bean.EroleExample;
+import com.ssm.bean.Erole;
+import com.ssm.bean.EroleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

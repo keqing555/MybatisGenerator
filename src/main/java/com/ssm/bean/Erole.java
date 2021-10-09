@@ -1,4 +1,4 @@
-package com.psi.bean;
+package com.ssm.bean;
 
 public class Erole {
     private Long rid;

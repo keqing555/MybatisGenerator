@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.psi.dao.EfunctionMapper">
-  <resultMap id="BaseResultMap" type="com.psi.bean.Efunction">
+<mapper namespace="com.ssm.dao.EfunctionMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.Efunction">
     <id column="fid" jdbcType="BIGINT" property="fid" />
     <result column="fcode" jdbcType="VARCHAR" property="fcode" />
     <result column="fname" jdbcType="VARCHAR" property="fname" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List">
     fid, fcode, fname, url, parentid, remark1, remark2
   </sql>
-  <select id="selectByExample" parameterType="com.psi.bean.EfunctionExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.ssm.bean.EfunctionExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -95,13 +95,13 @@
     delete from efunction
     where fid = #{fid,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.psi.bean.EfunctionExample">
+  <delete id="deleteByExample" parameterType="com.ssm.bean.EfunctionExample">
     delete from efunction
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.psi.bean.Efunction">
+  <insert id="insert" parameterType="com.ssm.bean.Efunction">
     insert into efunction (fid, fcode, fname, 
       url, parentid, remark1, 
       remark2)
@@ -109,7 +109,7 @@
       #{url,jdbcType=VARCHAR}, #{parentid,jdbcType=BIGINT}, #{remark1,jdbcType=VARCHAR}, 
       #{remark2,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.psi.bean.Efunction">
+  <insert id="insertSelective" parameterType="com.ssm.bean.Efunction">
     insert into efunction
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="fid != null">
@@ -158,7 +158,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.psi.bean.EfunctionExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.ssm.bean.EfunctionExample" resultType="java.lang.Long">
     select count(*) from efunction
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -206,7 +206,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.psi.bean.Efunction">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.bean.Efunction">
     update efunction
     <set>
       <if test="fcode != null">
@@ -230,7 +230,7 @@
     </set>
     where fid = #{fid,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.psi.bean.Efunction">
+  <update id="updateByPrimaryKey" parameterType="com.ssm.bean.Efunction">
     update efunction
     set fcode = #{fcode,jdbcType=VARCHAR},
       fname = #{fname,jdbcType=VARCHAR},

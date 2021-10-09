@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.psi.dao.RoleFunMapper">
-  <resultMap id="BaseResultMap" type="com.psi.bean.RoleFun">
+<mapper namespace="com.ssm.dao.RoleFunMapper">
+  <resultMap id="BaseResultMap" type="com.ssm.bean.RoleFun">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="rid" jdbcType="BIGINT" property="rid" />
     <result column="fid" jdbcType="BIGINT" property="fid" />
@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     id, rid, fid
   </sql>
-  <select id="selectByExample" parameterType="com.psi.bean.RoleFunExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.ssm.bean.RoleFunExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,17 +91,17 @@
     delete from role_fun
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.psi.bean.RoleFunExample">
+  <delete id="deleteByExample" parameterType="com.ssm.bean.RoleFunExample">
     delete from role_fun
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.psi.bean.RoleFun">
+  <insert id="insert" parameterType="com.ssm.bean.RoleFun">
     insert into role_fun (id, rid, fid)
     values (#{id,jdbcType=BIGINT}, #{rid,jdbcType=BIGINT}, #{fid,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.psi.bean.RoleFun">
+  <insert id="insertSelective" parameterType="com.ssm.bean.RoleFun">
     insert into role_fun
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -126,7 +126,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.psi.bean.RoleFunExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.ssm.bean.RoleFunExample" resultType="java.lang.Long">
     select count(*) from role_fun
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -158,7 +158,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.psi.bean.RoleFun">
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.bean.RoleFun">
     update role_fun
     <set>
       <if test="rid != null">
@@ -170,7 +170,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.psi.bean.RoleFun">
+  <update id="updateByPrimaryKey" parameterType="com.ssm.bean.RoleFun">
     update role_fun
     set rid = #{rid,jdbcType=BIGINT},
       fid = #{fid,jdbcType=BIGINT}

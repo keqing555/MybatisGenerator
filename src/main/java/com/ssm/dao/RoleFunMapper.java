@@ -1,7 +1,7 @@
-package com.psi.dao;
+package com.ssm.dao;
 
-import com.psi.bean.RoleFun;
-import com.psi.bean.RoleFunExample;
+import com.ssm.bean.RoleFun;
+import com.ssm.bean.RoleFunExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

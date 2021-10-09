@@ -1,7 +1,7 @@
-package com.psi.dao;
+package com.ssm.dao;
 
-import com.psi.bean.Message;
-import com.psi.bean.MessageExample;
+import com.ssm.bean.Message;
+import com.ssm.bean.MessageExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

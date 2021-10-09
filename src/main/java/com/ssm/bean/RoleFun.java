@@ -1,4 +1,4 @@
-package com.psi.bean;
+package com.ssm.bean;
 
 public class RoleFun {
     private Long id;
